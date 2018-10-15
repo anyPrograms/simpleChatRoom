@@ -2,32 +2,40 @@ package com.simpleChatRoom.Module;
 
 /**
  * 用户实体，存储用户基本信息
+ * id : 1
  * account : a12345
- * nickname : 小明
+ * nickName : 小明
  * password : asdf1234
  */
-public class userBean {
+public class UserBean {
+	private int id;
     private String account;
-    private String nickname;
+    private String nickName;
     private String password;
 
+    public int getId() {
+    	return id;
+    }
     public String getAccount() {
         return account;
     }
-    public String getNickname() {
-        return nickname;
+    public String getnickName() {
+        return nickName;
     }
 
     public String getPassword() {
         return password;
     }
 
+    public void setId(int id) {
+    	this.id = id;
+    }
     public void setAccount(String account) {
         this.account = account;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setnickName(String nickName) {
+        this.nickName = nickName;
     }
 
     public void setPassword(String password) {

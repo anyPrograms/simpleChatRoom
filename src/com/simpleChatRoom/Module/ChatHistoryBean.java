@@ -8,7 +8,7 @@ import java.util.Date;
  * message : 你好啊小李
  */
 
-public class chatHistoryBean {
+public class ChatHistoryBean {
     private Date date;
     private String acount;
     private String message;
