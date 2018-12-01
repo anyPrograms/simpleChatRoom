@@ -9,15 +9,20 @@ public class dBUtil {
 
     private static final Logger log = Logger.getLogger(dBUtil.class);
 
+    private static Connection conn=null;
+    //单例模式返回数据库连接
     public static Connection getConn(){
-        Connection conn=null;
+
         try{
             //加载驱动
             Class.forName(getDBValue("driverclass"));
             String url=getDBValue("url");
             String user=getDBValue("user");
             String password=getDBValue("password");
-            conn= DriverManager.getConnection(url,user,password);
+
+            if(conn==null){
+                conn= DriverManager.getConnection(url,user,password);
+            }
         }catch (Exception e){
             e.printStackTrace();
             log.error("connect database error::" + e);
@@ -68,4 +73,5 @@ public class dBUtil {
             log.error("Failed to close database connection");
         }
     }
+
 }
